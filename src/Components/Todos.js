@@ -9,6 +9,4 @@ const Todos = () => {
   );
 };
 
-// Proptypes
-
 export default Todos;
