@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import PropTypes from 'prop-types';
 import TodoContext from './context/todos/TodoContext';
 
 const AddTodo = (props) => {
@@ -37,10 +36,6 @@ const AddTodo = (props) => {
       />
     </form>
   );
-};
-
-AddTodo.propTypes = {
-  addTodo: PropTypes.func.isRequired,
 };
 
 export default AddTodo;

@@ -15,7 +15,7 @@ const TodoItem = (props) => {
   };
 
   return todos.map((todo) => (
-    <div style={getStyle()}>
+    <div style={getStyle()} key={todo.id}>
       <p style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
         {' '}
         <input type="checkbox" onChange={() => markComplete(todo.id)} />{' '}
@@ -27,7 +27,6 @@ const TodoItem = (props) => {
     </div>
   ));
 };
-// Proptypes
 
 const btnStyle = {
   color: '#fff',
