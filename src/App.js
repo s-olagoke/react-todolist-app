@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
+import Home from './Components/pages/Home';
+import Header from './Components/Layout/Header';
+import About from './Components/pages/About';
+import TodoState from './Components/context/todos/TodoState';
 
-function App() {
+const App = () => {
+  // componentDidMount() {
+  //   axios
+  //     .get('https://jsonplaceholder.typicode.com/todos?_limit=10')
+  //     .then((res) => this.setState({ todos: res.data }))
+  //     .catch((err) => console.log(err));
+  // }
+
+  // Toggle Complete
+
+  // Delete Todo
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TodoState>
+      <Router>
+        <div className="App">
+          <div className="container">
+            <Header />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+          </div>
+        </div>
+      </Router>
+    </TodoState>
   );
-}
+};
 
 export default App;
